@@ -1,3 +1,9 @@
+*.class
+*nbproject/
+*build/
+*.xml
+*.mf
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
