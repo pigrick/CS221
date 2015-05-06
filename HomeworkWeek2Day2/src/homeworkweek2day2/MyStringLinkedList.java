@@ -129,10 +129,18 @@ public class MyStringLinkedList {
     public void deleteNode(Node n){
         
         Node current = first;
-        while(current != null){
-            if(current.equals(n)){
-                current.previous.next = current.next;
-                current.next.previous = current.previous;
+        if(n.equals(first)){
+            current.next.previous = null;
+            first = current.next;
+        } else if (n.equals(last)){
+            last.previous.next = null;
+            last = last.previous;
+        } else {
+            while (current != null) {
+                if (current.equals(n)) {
+                    current.previous.next = current.next;
+                    current.next.previous = current.previous;
+                }
             }
         }
     }
@@ -164,33 +172,51 @@ public class MyStringLinkedList {
         msll.addFront("James");
         msll.addLast("Emily");
         msll.addLast("Anthony");
-        System.out.println("Forward Print");
+        System.out.println("Forward Print:");
         msll.printForward();
-        System.out.println("Reversed Print");
+        System.out.println("Reversed Print:");
         msll.printReverse();
         System.out.println("Find Emily: " + msll.findItem("Emily"));
         System.out.println("Find Albert: " + msll.findItem("Albert"));
         System.out.println("Find last: " + msll.findLast());
         System.out.println("Size: " + msll.size());
+        msll.preAddNode(msll.findItem("Anthony"), "Alex");
+        msll.postAddNode(msll.findItem("James"), "Nickson");
+        msll.printForward();
+        msll.deleteNode(msll.findItem("James"));
+        msll.deleteNode(msll.findItem("Anthony"));
+        System.out.println("---------");
+        msll.printForward();
         
     }
 }
 
-//I don't quite understand why we accept node as paramater for preAddNOde and postAddNOde
 
 
 /*Output:
-MyStringLinkedList msll = new MyStringLinkedList();
-        msll.addFront("Max");
-        msll.addFront("James");
-        msll.addLast("Emily");
-        msll.addLast("Anthony");
-        System.out.println("Forward Print");
-        msll.printForward();
-        System.out.println("Reversed Print");
-        msll.printReverse();
-        System.out.println("Find Emily: " + msll.findItem("Emily"));
-        System.out.println("Find Albert: " + msll.findItem("Albert"));
-        System.out.println("Find last: " + msll.findLast());
-        System.out.println("Size: " + msll.size());
+Forward Print:
+James
+Max
+Emily
+Anthony
+Reversed Print:
+Anthony
+Emily
+Max
+James
+Find Emily: Emily
+Find Albert: null
+Find last: Anthony
+Size: 4
+James
+Nickson
+Max
+Emily
+Alex
+Anthony
+---------
+Nickson
+Max
+Emily
+Alex
 */
