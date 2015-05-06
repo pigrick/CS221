@@ -5,8 +5,8 @@ package homeworkday5;
 public class UserQueue {
     private int maxSize;
     private int[] queArray;
-    private int front;
-    private int rear;
+    int front;
+    int rear;
     
     public UserQueue(int s){
         maxSize = s;
@@ -35,7 +35,7 @@ public class UserQueue {
     }
 
     public boolean isEmpty() {
-        return (rear + 1 == front || (front + maxSize - 1 == rear));
+        return (rear + 1 == front);
     }
 
     public boolean isFull() {
