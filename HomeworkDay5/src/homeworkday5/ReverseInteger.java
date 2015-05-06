@@ -19,6 +19,7 @@ public class ReverseInteger {
         }
         num.insert(n);
         System.out.print("Reversed: ");
+        System.out.print(num.remove());
         while(!num.isEmpty()){
             System.out.print(num.remove());
         }

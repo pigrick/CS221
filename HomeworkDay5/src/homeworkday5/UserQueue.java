@@ -35,11 +35,10 @@ public class UserQueue {
     }
 
     public boolean isEmpty() {
-        return (rear + 1 == front);
+        return (rear + 1 == front || (front + maxSize - 1 == rear));
     }
 
     public boolean isFull() {
         return (rear + 2 == front || (front + maxSize - 2 == rear));
     }
-
 }
