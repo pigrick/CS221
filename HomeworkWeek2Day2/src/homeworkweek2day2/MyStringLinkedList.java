@@ -58,7 +58,7 @@ public class MyStringLinkedList {
     public void postAddNode(Node n, String value){
         Node newNode = new Node(value);
         Node current = first;
-        if(n.equals(last.value)){
+        if(n.equals(last)){
             this.addLast(value);
         } else {           
             while(current != null){
