@@ -13,8 +13,9 @@ public class Tree234 {
 
     private Node root = new Node();
     private static int leaf;
+    private Tree234 temp;
 // -------------------------------------------------------------
-
+    
     public int find(long key) {
         Node curNode = root;
         int childNumber;
@@ -183,6 +184,30 @@ public class Tree234 {
         return 0;
     }
     
+    public void sort(Node localRoot){
+        temp = new Tree234();
+        sorting(localRoot);
+    }
+    
+    
+    public void sorting(Node localRoot){
+        if(localRoot != null){
+            sorting(localRoot.getChild(0));
+            if((localRoot.getItem(0) != null)){
+                temp.insert(localRoot.getItem(0).dData);
+            }
+            sorting(localRoot.getChild(1));
+            if((localRoot.getItem(1) != null)){
+                temp.insert(localRoot.getItem(1).dData);
+            }
+            sorting(localRoot.getChild(2));
+            if((localRoot.getItem(2) != null)){
+                temp.insert(localRoot.getItem(2).dData);
+            }
+            sorting(localRoot.getChild(3));
+        }
+    }
+    
     public void inOrder(Node localRoot){
         if(localRoot != null){
             inOrder(localRoot.getChild(0));
@@ -194,22 +219,7 @@ public class Tree234 {
             inOrder(localRoot.getChild(3));
         }
     }
-    /*public int getLeaf(Node localRoot){
-        leaf = 0;
-        return countLeaf(localRoot);
-    }
-    
-    public int countLeaf(Node localRoot){
-        if (localRoot != null) {
-            for(int i = 0; i< localRoot.getChildArray().length;i++){
-                countLeaf(localRoot.getChildArray()[i]);
-                if(localRoot.getChildArray()[i] != null){
-                    leaf++;
-                }
-            }
-        }
-        return leaf;
-    }*/
+   
     
     public Node getRoot(){
         return root;

@@ -32,7 +32,7 @@ public class Tree234App {
 
         while (true) {
             System.out.print("Enter first letter of ");
-            System.out.print("show, insert, leafcount, nodecount, minvalue, totalsum, orderdisplay or find: ");
+            System.out.print("show, insert, leafcount, nodecount, minvalue, totalsum, orderdisplay, arrangesort or find: ");
             char choice = getChar();
             switch (choice) {
                 case 's':
@@ -70,7 +70,9 @@ public class Tree234App {
                     theTree.inOrder(theTree.getRoot());
                     System.out.println();
                     break;    
-                    
+                case 'a':
+                    theTree.sort(theTree.getRoot());
+                    break;
                 default:
                     System.out.print("Invalid entry\n");
             }  // end switch
