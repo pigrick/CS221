@@ -184,9 +184,10 @@ public class Tree234 {
         return 0;
     }
     
-    public void sort(Node localRoot){
+    public Tree234 sort(Node localRoot){
         temp = new Tree234();
         sorting(localRoot);
+        return temp;
     }
     
     

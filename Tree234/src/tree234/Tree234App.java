@@ -71,7 +71,7 @@ public class Tree234App {
                     System.out.println();
                     break;    
                 case 'a':
-                    theTree.sort(theTree.getRoot());
+                    theTree = theTree.sort(theTree.getRoot());
                     break;
                 default:
                     System.out.print("Invalid entry\n");
