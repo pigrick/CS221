@@ -28,6 +28,9 @@ public class Tree234App {
         theTree.insert(77);
         theTree.insert(34);
         theTree.insert(22);
+        theTree.insert(33);
+        theTree.insert(44);
+       
         
 
         while (true) {
@@ -73,6 +76,8 @@ public class Tree234App {
                 case 'a':
                     theTree = theTree.sort(theTree.getRoot());
                     break;
+                case 'q':
+                    return;
                 default:
                     System.out.print("Invalid entry\n");
             }  // end switch

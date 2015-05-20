@@ -124,17 +124,17 @@ public class Tree234 {
             int childNumber) {
         System.out.print("level=" + level + " child=" + childNumber + " ");
         thisNode.displayNode();               // display this node
-
-        // call ourselves for each child of this node
+        
+        
         int numItems = thisNode.getNumItems();
-        for (int j = 0; j < numItems + 1; j++) {
+        for (int j = 0; j < numItems + 1; j++) {           
             Node nextNode = thisNode.getChild(j);
-            if (nextNode != null) {
+            if (nextNode != null) {                
                 recDisplayTree(nextNode, level + 1, j);
-            } else {
+            } else {               
                 return;
             }
-        }
+        }        
     }
     
     public long getMinValue(Node localRoot){
